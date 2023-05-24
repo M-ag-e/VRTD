@@ -10,4 +10,6 @@ public class TriggerManager : MonoBehaviour
         Crystal
     }
     public TriggerType triggerType;
+
+
 }

@@ -36,15 +36,18 @@ public class EnemyMovement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<TriggerManager>().triggerType == TriggerManager.TriggerType.Crystal)
+        if (collision.gameObject.GetComponent<TriggerManager>())
         {
-            Debug.Log("Enemy Picked up Crystal!!!!!!!!!");
-            hasCrystal = true;
-        }
-        if (collision.gameObject.GetComponent<TriggerManager>().triggerType == TriggerManager.TriggerType.Entrance && hasCrystal)
-        {
-            Debug.Log("Enemy escaped with Crystal!!!");
-            Destroy(gameObject);
+            if (collision.gameObject.GetComponent<TriggerManager>().triggerType == TriggerManager.TriggerType.Crystal && !hasCrystal)
+            {
+                Debug.Log("Enemy Picked up Crystal!!!!!!!!!");
+                hasCrystal = true;
+            }
+            if (collision.gameObject.GetComponent<TriggerManager>().triggerType == TriggerManager.TriggerType.Entrance && hasCrystal)
+            {
+                Debug.Log("Enemy escaped with Crystal!!!");
+                Destroy(gameObject);
+            }
         }
     }
 }
