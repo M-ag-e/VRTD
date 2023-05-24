@@ -45,7 +45,7 @@ public class EnemyMovement : MonoBehaviour
             }
             if (collision.gameObject.GetComponent<TriggerManager>().triggerType == TriggerManager.TriggerType.Entrance && hasCrystal)
             {
-                Debug.Log("Enemy escaped with Crystal!!!");
+                Debug.Log($"{GameManager.livesRemaining} lives remaining!");
                 Destroy(gameObject);
             }
         }
