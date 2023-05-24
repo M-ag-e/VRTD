@@ -1,4 +1,0 @@
-repository "VRTD@georgeclark122@cloud"
-  path "/"
-    br "/main"
-    co "/main"
