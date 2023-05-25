@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 1852189105408239855}
   - component: {fileID: 2830165870483951189}
   - component: {fileID: 4506886937389001175}
+  - component: {fileID: 1764479427427072038}
   m_Layer: 0
   m_Name: TowerShootPoint
   m_TagString: Untagged
@@ -281,3 +282,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjects: []
+--- !u!114 &1764479427427072038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8961374175394234361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3be917a80086a48b97933694257f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -13,6 +13,10 @@ public class TowerProjectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
+    private void Awake()
+    {
+        StartCoroutine(KillAfterSeconds());
+    }
     private void FixedUpdate()
     {
         Vector3 velocity = Vector3.forward * projectileSpeed;
@@ -58,5 +62,10 @@ public class TowerProjectile : MonoBehaviour
             OnImpact(collision.gameObject);
         }
 
+    }
+    IEnumerator KillAfterSeconds()
+    {
+        yield return new WaitForSeconds(10);
+        Destroy(gameObject);
     }
 }
