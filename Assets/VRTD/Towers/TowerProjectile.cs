@@ -5,15 +5,32 @@ using UnityEngine;
 public class TowerProjectile : MonoBehaviour
 {
     public TowerUnitData.TowerHitType hitType;
+    public float projectileDamage = 0;
     public float projectileSpeed = 5;
 
+    private Rigidbody rb;
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+    private void FixedUpdate()
+    {
+        Vector3 velocity = Vector3.forward * projectileSpeed;
+        transform.Translate(velocity * Time.deltaTime);
+    }
 
     public void OnImpact()
+    {
+        Destroy(gameObject);
+    }
+
+    public void OnImpact(GameObject enemy)
     {
         // Add visual stuff later
         switch (hitType)
         {
             case TowerUnitData.TowerHitType.Single:
+                enemy.GetComponent<EnemyUnitData>().health -= projectileDamage;
                 // Do single damage
                 break;
             case TowerUnitData.TowerHitType.Multiple:
@@ -38,7 +55,7 @@ public class TowerProjectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             // Damage enemy, then impact
-            OnImpact();
+            OnImpact(collision.gameObject);
         }
 
     }

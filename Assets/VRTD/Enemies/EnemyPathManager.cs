@@ -123,6 +123,7 @@ public class EnemyPathManager : MonoBehaviour
             }
             
             obj.GetComponent<EnemyUnitData>().unitID = i;
+            obj.name += $" ({i})";
             yield return new WaitForSeconds(1f); 
         }
         
