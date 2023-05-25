@@ -7,6 +7,7 @@ public class TowerProjectile : MonoBehaviour
     public TowerUnitData.TowerHitType hitType;
     public float projectileDamage = 0;
     public float projectileSpeed = 5;
+    //public Color projectileColor;
 
     private Rigidbody rb;
     private void Start()
@@ -15,7 +16,11 @@ public class TowerProjectile : MonoBehaviour
     }
     private void Awake()
     {
+        //ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
+        //ParticleSystem.MainModule ma = ps.main;
         StartCoroutine(KillAfterSeconds());
+        //ma.startColor = projectileColor;
+        //gameObject.GetComponentInChildren<Light>().color = projectileColor;
     }
     private void FixedUpdate()
     {

@@ -33,13 +33,14 @@ public class TowerUnitData : MonoBehaviour
     public Transform towerShootingPoint;                            // Point that the projectiles get launched from
     public GameObject towerProjectile;                              // Projectile to spawn
     public LayerMask enemyLayer;                                    // Enemy layer for sphere raycast collision
+    
 
 
     [SerializeField] private GameObject enemyTarget = null;         // Target for the tower to shoot
     private List<GameObject> enemyObjects;
     private TowerTop towerTop;
     [Header("Debug Stuff")]
-    public Color gizmoColour = new Color(1f,1f,1f,1f);              // Gizmo color set in inspector
+    public Color gizmoColour = new Color(1f,1f,1f,1f);              // Gizmo color set in inspector FUCK UNITY PUBLIC COLORS >:(
 
     private void Start()
     {
@@ -73,7 +74,7 @@ public class TowerUnitData : MonoBehaviour
                                         {
                                             canfire = false;
                                             enemyTarget = obj;
-                                            Debug.Log($"Targeting enemy {enemyTarget.GetComponent<EnemyUnitData>().unitID} at ({Time.deltaTime})");
+                                            //Debug.Log($"Targeting enemy {enemyTarget.GetComponent<EnemyUnitData>().unitID} at ({Time.deltaTime})");
                                             TowerShoot(enemyTarget.transform);
                                         }
                                     }
@@ -86,7 +87,7 @@ public class TowerUnitData : MonoBehaviour
                                         {
                                             canfire = false;
                                             enemyTarget = obj;
-                                            Debug.Log($"Targeting enemy {enemyTarget.GetComponent<EnemyUnitData>().unitID} at ({Time.deltaTime})");
+                                            //Debug.Log($"Targeting enemy {enemyTarget.GetComponent<EnemyUnitData>().unitID} at ({Time.deltaTime})");
                                             TowerShoot(enemyTarget.transform);
                                         }
                                     }
@@ -112,7 +113,7 @@ public class TowerUnitData : MonoBehaviour
                                         {
                                             canfire = false;
                                             enemyTarget = obj;
-                                            Debug.Log($"Targeting enemy {enemyTarget.GetComponent<EnemyUnitData>().unitID} at ({Time.deltaTime})");
+                                            //Debug.Log($"Targeting enemy {enemyTarget.GetComponent<EnemyUnitData>().unitID} at ({Time.deltaTime})");
                                             TowerShoot(enemyTarget.transform);
                                         }
                                     }
@@ -125,7 +126,7 @@ public class TowerUnitData : MonoBehaviour
                                         {
                                             canfire = false;
                                             enemyTarget = obj;
-                                            Debug.Log($"Targeting enemy {enemyTarget.GetComponent<EnemyUnitData>().unitID} at ({Time.deltaTime})");
+                                            //Debug.Log($"Targeting enemy {enemyTarget.GetComponent<EnemyUnitData>().unitID} at ({Time.deltaTime})");
                                             TowerShoot(enemyTarget.transform);
                                         }
                                     }
@@ -159,6 +160,7 @@ public class TowerUnitData : MonoBehaviour
         var obj = Instantiate(towerProjectile,towerShootingPoint.position,Quaternion.LookRotation(towerShootingPoint.forward));
         obj.GetComponent<TowerProjectile>().projectileDamage = towerDamage;
         obj.GetComponent<TowerProjectile>().projectileSpeed = towerProjectileSpeed;
+        //obj.GetComponent<TowerProjectile>().projectileColor = gameObject.GetComponentInChildren<ParticleSystem>().startColor;
     }
 
     private void OnDrawGizmosSelected()

@@ -43,7 +43,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.8107188, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -104,7 +104,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4228036341661084333, guid: 0e037aa875de80c4bb0f0dea4bff0abf, type: 3}
       propertyPath: m_Name
-      value: SpawnerCube
+      value: SpawnerCubeAoE
       objectReference: {fileID: 0}
     - target: {fileID: 4228036341661084340, guid: 0e037aa875de80c4bb0f0dea4bff0abf, type: 3}
       propertyPath: m_RootOrder
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443b4d7a7466b96489277f8957bd5a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnerType: 0
+  spawnerType: 2
 --- !u!4 &8673170506354863089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4228036341661084340, guid: 0e037aa875de80c4bb0f0dea4bff0abf, type: 3}

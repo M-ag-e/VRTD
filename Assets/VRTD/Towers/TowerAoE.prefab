@@ -210,11 +210,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackOrder: 0
-  hitType: 1
-  towerAttackRate: 1
-  towerDamage: 4
-  towerRange: 6
-  towerProjectileSpeed: 15
+  hitType: 0
+  towerAttackRate: 0.1
+  towerDamage: 1
+  towerRange: 5
+  towerProjectileSpeed: 20
   towerShootingPoint: {fileID: 1852189105408239855}
   towerProjectile: {fileID: 996692288986318440, guid: 1fd73bddb58696444909d0c1cff24f18, type: 3}
   enemyLayer:

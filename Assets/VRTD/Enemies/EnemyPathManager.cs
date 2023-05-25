@@ -12,9 +12,9 @@ public class EnemyPathManager : MonoBehaviour
 
     private int[] wave0 = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     private int[] wave1 = new int[] { 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0 };
-    private int[] wave2 = new int[] { 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0 };
-    private int[] wave3 = new int[] { 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0 };
-    private int[] wave4 = new int[] { 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0 };
+    private int[] wave2 = new int[] { 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 };
+    private int[] wave3 = new int[] { 0, 2, 1, 0, 0, 1, 0, 2, 1, 0, 0 };
+    private int[] wave4 = new int[] { 0, 2, 1, 0, 1, 1, 2, 0, 1, 2, 1 };
 
     private List<GameObject> gameObjects = new List<GameObject>();
     private int waveCount = 0;
@@ -27,7 +27,14 @@ public class EnemyPathManager : MonoBehaviour
 
     private void Update()
     {
-
+        if (gameObjects.Count == 0)
+        {
+            StartCoroutine(WaitEndOfRound());
+        }
+        if (canWaveBeStarted)
+        {
+            StartWave();
+        }
     }
     private void OnDrawGizmos()
     {
@@ -79,6 +86,7 @@ public class EnemyPathManager : MonoBehaviour
     {
         if (canWaveBeStarted && waveCount < 5)
         {
+            canWaveBeStarted = false;
             switch (waveCount)
             {
                 case 0:
@@ -138,5 +146,10 @@ public class EnemyPathManager : MonoBehaviour
             obj.name += $" ({i})";
             yield return new WaitForSeconds(1f); 
         }
+    }
+    IEnumerator WaitEndOfRound()
+    {
+        yield return new WaitForSeconds(10);
+        canWaveBeStarted = true;
     }
 }
