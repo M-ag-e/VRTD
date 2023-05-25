@@ -18,15 +18,15 @@ public class TowerTile : MonoBehaviour
             switch (other.gameObject.GetComponent<TowerSpawnerData>().spawnerType)
             {
                 case TowerSpawnerData.TowerSpawnerType.Basic:
-                    Instantiate(towerBasicPrefab,towerSpawnPoint.transform);
+                    Instantiate(towerBasicPrefab, towerSpawnPoint.transform.position, Quaternion.identity, null);
                     break;
 
                 case TowerSpawnerData.TowerSpawnerType.Heavy:
-                    Instantiate(towerHeavyPrefab, towerSpawnPoint.transform);
+                    Instantiate(towerBasicPrefab, towerSpawnPoint.transform.position, Quaternion.identity, null);
                     break;
 
                 case TowerSpawnerData.TowerSpawnerType.AoE:
-                    Instantiate(towerAoEPrefab, towerSpawnPoint.transform);
+                    Instantiate(towerBasicPrefab, towerSpawnPoint.transform.position, Quaternion.identity, null);
                     break;
 
             }
