@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -16,24 +17,33 @@ public class EnemyPathManager : MonoBehaviour
     private int[] wave3 = new int[] { 0, 2, 1, 0, 0, 1, 0, 2, 1, 0, 0 };
     private int[] wave4 = new int[] { 0, 2, 1, 0, 1, 1, 2, 0, 1, 2, 1 };
 
-    private List<GameObject> gameObjects = new List<GameObject>();
+    [SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
     private int waveCount = 0;
     public static bool canWaveBeStarted = true;
+    private bool corutineHold = false;
 
     private void Start()
     {
-
     }
 
     private void Update()
     {
-        if (gameObjects.Count == 0)
+        try
         {
-            StartCoroutine(WaitEndOfRound());
+            foreach (GameObject obj in gameObjects)
+            {
+                if (obj == null) { gameObjects.Remove(obj); }
+            }
+        }
+        catch (InvalidOperationException e) {  }
+        if (gameObjects.Count == 0 && !corutineHold)
+        {
+            canWaveBeStarted = true;
         }
         if (canWaveBeStarted)
         {
-            StartWave();
+            canWaveBeStarted = false;
+            StartCoroutine(WaitEndOfRound());
         }
     }
     private void OnDrawGizmos()
@@ -84,9 +94,10 @@ public class EnemyPathManager : MonoBehaviour
     }
     public void StartWave()
     {
-        if (canWaveBeStarted && waveCount < 5)
+        if (waveCount < 5)
         {
-            canWaveBeStarted = false;
+            Debug.Log($"Wave {waveCount} started");
+            canWaveBeStarted= false;
             switch (waveCount)
             {
                 case 0:
@@ -118,6 +129,7 @@ public class EnemyPathManager : MonoBehaviour
                 default: Debug.LogError("This shouldnt be called"); break;
             }
         }
+        corutineHold = false;
     }
     IEnumerator WaitToSpawnEnemies(int[] wave)
     {
@@ -149,7 +161,8 @@ public class EnemyPathManager : MonoBehaviour
     }
     IEnumerator WaitEndOfRound()
     {
+        corutineHold = true;
         yield return new WaitForSeconds(10);
-        canWaveBeStarted = true;
+        StartWave();
     }
 }

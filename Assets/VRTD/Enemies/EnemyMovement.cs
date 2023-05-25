@@ -40,12 +40,12 @@ public class EnemyMovement : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<TriggerManager>().triggerType == TriggerManager.TriggerType.Crystal && !hasCrystal)
             {
-                Debug.Log("Enemy Picked up Crystal!!!!!!!!!");
+                //Debug.Log("Enemy Picked up Crystal!!!!!!!!!");
                 hasCrystal = true;
             }
             if (collision.gameObject.GetComponent<TriggerManager>().triggerType == TriggerManager.TriggerType.Entrance && hasCrystal)
             {
-                Debug.Log($"{GameManager.livesRemaining} lives remaining!");
+                //Debug.Log($"{GameManager.livesRemaining} lives remaining!");
                 Destroy(gameObject);
             }
         }

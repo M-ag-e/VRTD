@@ -22,11 +22,11 @@ public class TowerTile : MonoBehaviour
                     break;
 
                 case TowerSpawnerData.TowerSpawnerType.Heavy:
-                    Instantiate(towerBasicPrefab, towerSpawnPoint.transform.position, Quaternion.identity, null);
+                    Instantiate(towerHeavyPrefab, towerSpawnPoint.transform.position, Quaternion.identity, null);
                     break;
 
                 case TowerSpawnerData.TowerSpawnerType.AoE:
-                    Instantiate(towerBasicPrefab, towerSpawnPoint.transform.position, Quaternion.identity, null);
+                    Instantiate(towerAoEPrefab, towerSpawnPoint.transform.position, Quaternion.identity, null);
                     break;
 
             }
