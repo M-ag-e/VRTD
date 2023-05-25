@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 5233574643858421852}
   - component: {fileID: 6512530696834048124}
   m_Layer: 0
-  m_Name: TowerBase
+  m_Name: TowerHeavy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -211,10 +211,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackOrder: 0
   hitType: 0
-  towerAttackRate: 0.5
-  towerDamage: 2
-  towerRange: 8
-  towerProjectileSpeed: 15
+  towerAttackRate: 1.5
+  towerDamage: 6
+  towerRange: 12
+  towerProjectileSpeed: 25
   towerShootingPoint: {fileID: 1852189105408239855}
   towerProjectile: {fileID: 996692288986318440, guid: 1fd73bddb58696444909d0c1cff24f18, type: 3}
   enemyLayer:

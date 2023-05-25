@@ -11,5 +11,10 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Player ran out of lives!");
         }
+
+    }
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(100, 100, 150, 100), $"Ammount of lives remaining: {livesRemaining}");
     }
 }

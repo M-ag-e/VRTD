@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 5233574643858421852}
   - component: {fileID: 6512530696834048124}
   m_Layer: 0
-  m_Name: TowerBase
+  m_Name: TowerAoE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,10 +210,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackOrder: 0
-  hitType: 0
-  towerAttackRate: 0.5
-  towerDamage: 2
-  towerRange: 8
+  hitType: 1
+  towerAttackRate: 1
+  towerDamage: 4
+  towerRange: 6
   towerProjectileSpeed: 15
   towerShootingPoint: {fileID: 1852189105408239855}
   towerProjectile: {fileID: 996692288986318440, guid: 1fd73bddb58696444909d0c1cff24f18, type: 3}
