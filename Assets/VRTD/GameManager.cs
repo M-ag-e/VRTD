@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
             Debug.Log("Player ran out of lives!");
         }
 
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            GameObject.Find("GamePathManager").GetComponent<EnemyPathManager>().StartWave();
+        }
+
     }
     private void OnGUI()
     {
