@@ -16,9 +16,18 @@ public class EnemyPathManager : MonoBehaviour
     private int[] wave3 = new int[] { 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0 };
     private int[] wave4 = new int[] { 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0 };
 
+    private List<GameObject> gameObjects = new List<GameObject>();
+    private int waveCount = 0;
+    public static bool canWaveBeStarted = true;
+
     private void Start()
     {
-        StartWave(0);
+
+    }
+
+    private void Update()
+    {
+
     }
     private void OnDrawGizmos()
     {
@@ -65,43 +74,46 @@ public class EnemyPathManager : MonoBehaviour
             Debug.LogError("uh oh, somthing broke here");
             return null;
         }
-                /**
-        if (currentWaypoint.GetSiblingIndex() >= transform.childCount -1 && hasCystal)
-        {
-            return transform.GetChild(currentWaypoint.GetSiblingIndex() - 1);
-        }
-       
-        else if (!hasCystal)
-        {
-            return transform.GetChild(0);
-        }
-                **/
     }
-    public void StartWave(int waveNumber)
+    public void StartWave()
     {
-            switch (waveNumber)
+        if (canWaveBeStarted && waveCount < 5)
+        {
+            switch (waveCount)
             {
                 case 0:
                     StartCoroutine(WaitToSpawnEnemies(wave0));
+                    waveCount++;
                     break;
+
                 case 1:
                     StartCoroutine(WaitToSpawnEnemies(wave1));
+                    waveCount++;
                     break;
+
                 case 2:
                     StartCoroutine(WaitToSpawnEnemies(wave2));
+                    waveCount++;
                     break;
+
                 case 3:
                     StartCoroutine(WaitToSpawnEnemies(wave3));
+                    waveCount++;
                     break;
+
                 case 4:
                     StartCoroutine(WaitToSpawnEnemies(wave4));
+                    waveCount++;
                     break;
+
 
                 default: Debug.LogError("This shouldnt be called"); break;
             }
+        }
     }
     IEnumerator WaitToSpawnEnemies(int[] wave)
     {
+        
         for (int i = 0;i < wave.Length - 1; i++) 
         {
             GameObject obj = null;
@@ -121,11 +133,10 @@ public class EnemyPathManager : MonoBehaviour
                     Debug.Log("This should not call");
                     break;
             }
-            
+            gameObjects.Add(obj);
             obj.GetComponent<EnemyUnitData>().unitID = i;
             obj.name += $" ({i})";
             yield return new WaitForSeconds(1f); 
         }
-        
     }
 }
