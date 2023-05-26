@@ -49,7 +49,7 @@ CapsuleCollider:
   m_Radius: 0.38
   m_Height: 1.61
   m_Direction: 1
-  m_Center: {x: 0, y: -0.15, z: 0}
+  m_Center: {x: 0, y: -0.11, z: 0}
 --- !u!54 &6382756013408666396
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  movementSpeed: 4
+  movementSpeed: 6
   hasCrystal: 0
   unitID: 0
   enemyModel: {fileID: 0}

@@ -5271,7 +5271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 12b85701de42f9f41812c467ddb6613d, type: 3}
       propertyPath: m_Name
-      value: Long Range Tower
+      value: Heavy Tower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

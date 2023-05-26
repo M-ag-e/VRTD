@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  movementSpeed: 2
+  movementSpeed: 3
   hasCrystal: 0
   unitID: 0
   enemyModel: {fileID: 0}
