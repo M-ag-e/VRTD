@@ -123,11 +123,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8264908919304810032}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.783, z: 0}
-  m_LocalScale: {x: 0.51628894, y: 0.51628894, z: 0.51628894}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5386444, y: 0.5386444, z: 0.5386444}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5648461585580079407}
+  m_Father: {fileID: 1852189105408239855}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &599487429516582640
@@ -141,8 +141,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.29411766, g: 0.5411765, b: 0.54509807, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0, g: 0.984375, b: 1, a: 1}
+  m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -226,8 +226,6 @@ Transform:
   m_Children:
   - {fileID: 8382250529124532103}
   - {fileID: 2645176994438700389}
-  - {fileID: 8319112892650718659}
-  - {fileID: 7653658627214029905}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -349,7 +347,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.776, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8319112892650718659}
+  - {fileID: 7653658627214029905}
   m_Father: {fileID: 8382250529124532103}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -416,12 +416,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9177618423117256662}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.759, z: 0}
-  m_LocalScale: {x: 0.51628894, y: 0.51628894, z: 0.51628894}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5386444, y: 0.5386444, z: 0.5386444}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5648461585580079407}
+  m_Father: {fileID: 1852189105408239855}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &8061777241583568701
@@ -614,7 +614,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.27058825, g: 0.5411765, b: 0.54901963, a: 1}
+      maxColor: {r: 0, g: 0.9718311, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
