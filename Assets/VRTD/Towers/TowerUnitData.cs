@@ -32,7 +32,7 @@ public class TowerUnitData : MonoBehaviour
     
     public Transform towerShootingPoint;                            // Point that the projectiles get launched from
     public GameObject towerProjectile;                              // Projectile to spawn
-    public LayerMask enemyLayer;                                    // Enemy layer for sphere raycast collision
+    public AudioClip towerFiringSound;
     
 
 
@@ -160,6 +160,7 @@ public class TowerUnitData : MonoBehaviour
         var obj = Instantiate(towerProjectile,towerShootingPoint.position,Quaternion.LookRotation(towerShootingPoint.forward));
         obj.GetComponent<TowerProjectile>().projectileDamage = towerDamage;
         obj.GetComponent<TowerProjectile>().projectileSpeed = towerProjectileSpeed;
+        AudioSource.PlayClipAtPoint(towerFiringSound, towerShootingPoint.position);
         //obj.GetComponent<TowerProjectile>().projectileColor = gameObject.GetComponentInChildren<ParticleSystem>().startColor;
     }
 

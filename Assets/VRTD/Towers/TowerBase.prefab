@@ -32,6 +32,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1852189105408239855}
+  - {fileID: 4577410572662394004}
+  - {fileID: 8781366181748956108}
   m_Father: {fileID: 5648461585580079407}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -124,11 +126,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6199010131557065399}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.78800017, z: 0}
   m_LocalScale: {x: 0.5386444, y: 0.5386444, z: 0.5386444}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1852189105408239855}
+  m_Father: {fileID: 8382250529124532103}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &771557139735806170
@@ -4937,11 +4939,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7375790952682200863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.78800017, z: 0}
   m_LocalScale: {x: 0.5386444, y: 0.5386444, z: 0.5386444}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1852189105408239855}
+  m_Father: {fileID: 8382250529124532103}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &5155174051046454773
@@ -5126,9 +5128,7 @@ MonoBehaviour:
   towerProjectileSpeed: 15
   towerShootingPoint: {fileID: 1852189105408239855}
   towerProjectile: {fileID: 996692288986318440, guid: 1fd73bddb58696444909d0c1cff24f18, type: 3}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 8
+  towerFiringSound: {fileID: 8300000, guid: cd32d1fafaa02824b920546b8ab1ef54, type: 3}
   enemyTarget: {fileID: 0}
   gizmoColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8961374175394234361
@@ -5161,9 +5161,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.788, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4577410572662394004}
-  - {fileID: 8781366181748956108}
+  m_Children: []
   m_Father: {fileID: 8382250529124532103}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

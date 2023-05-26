@@ -9,6 +9,8 @@ public class EnemyUnitData : MonoBehaviour
     public float movementSpeed = 2;
     public bool hasCrystal = false;
     public int unitID = 0;
+    public AudioClip enemyHitSound;
+    public AudioClip enemyDeathSound;
 
     [Header("Visuals")]
     public GameObject enemyModel;
@@ -16,7 +18,12 @@ public class EnemyUnitData : MonoBehaviour
     {
         if (health <= 0)
         {
+            AudioSource.PlayClipAtPoint(enemyDeathSound, transform.position);
             Destroy(gameObject);
         }
+    }
+    public void PlayerHitSound()
+    {
+        AudioSource.PlayClipAtPoint(enemyHitSound,transform.position);
     }
 }
