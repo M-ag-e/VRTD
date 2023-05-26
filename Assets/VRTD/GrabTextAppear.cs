@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GrabTextAppear : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject textObject;
+    public void ActivateText()
     {
-        
+        textObject.SetActive(true);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void DeactivateText()
     {
-        
+        textObject.SetActive(false);
     }
 }

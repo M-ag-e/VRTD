@@ -39,6 +39,7 @@ public class TowerProjectile : MonoBehaviour
         switch (hitType)
         {
             case TowerUnitData.TowerHitType.Single:
+                enemy.GetComponent<EnemyUnitData>().PlayerHitSound();
                 enemy.GetComponent<EnemyUnitData>().health -= projectileDamage;
                 // Do single damage
                 break;
@@ -55,12 +56,6 @@ public class TowerProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground")) 
-        {
-            // Do nothing, go stright to impact
-            OnImpact();
-        }
-
         if (collision.gameObject.CompareTag("Enemy"))
         {
             // Damage enemy, then impact

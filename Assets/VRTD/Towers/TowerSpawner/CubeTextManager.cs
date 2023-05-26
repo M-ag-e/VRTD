@@ -12,15 +12,15 @@ public class CubeTextManager : MonoBehaviour
         switch (tower.spawnerType)
         {
             case TowerSpawnerData.TowerSpawnerType.Basic:
-                text.text = "";
+                text.text = "Basic Tower\nMedium Firerate\nMedium Damage";
                 break;
 
             case TowerSpawnerData.TowerSpawnerType.Heavy:
-                text.text = "";
+                text.text = "Heavy Tower\nSlow Firerate\nHigh Damage";
                 break;
 
             case TowerSpawnerData.TowerSpawnerType.AoE:
-                text.text = "";
+                text.text = "Light Tower\nFast Firerate\nLow Damage";
                 break;
         }
     }
