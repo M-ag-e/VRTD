@@ -11,7 +11,7 @@ public class Crossbow : MonoBehaviour
     public bool loaded = true;
     private void FixedUpdate()
     {
-        if (hand.grabGripAction.state)
+        if (hand.grabPinchAction.state)
         {
             if (loaded)
             {
